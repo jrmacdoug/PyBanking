@@ -20,7 +20,7 @@ What is the Label?
 
 def transact_update(ListOfPaths):
     for t in ListOfPaths:
-        if '2022.csv' in str(t):
+        if datetime.now().year in str(t):
             with open(str(t),'r+') as f:
                 reader = csv.reader(f)
                 for r in reader:
@@ -35,11 +35,11 @@ def transact_update(ListOfPaths):
                     except IndexError:
                         pass
             
+            #reindex and reorganize files
             t_csv = pd.read_csv(str(t),encoding='cp1252')
             t_csv = t_csv.sort_values(by=['TransactionDate','Label'], ascending=(True,True))        
             t_csv = t_csv.drop_duplicates(subset=t_csv.columns.difference(['Label']),keep='first')
             t_csv.reindex()
-
             with open(str(t),'w') as f:
                 t_csv.to_csv(f
                         ,encoding='utf-8'
