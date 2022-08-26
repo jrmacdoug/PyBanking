@@ -11,7 +11,7 @@ from datetime import datetime
 banking_path = Path.cwd()
 
 message = """
-Missing Label Found!
+Missing Label Found!:
   Description: {Description}
   Date: {Date}
   Amount: {Amount}
