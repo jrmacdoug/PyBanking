@@ -60,6 +60,7 @@ def combine_year(download_df,folder_Str):
 
 
 for a in archive_path.iterdir():
+    #for VISA and TD csv files
     if 'accountactivity' in str(a):
         #open folder
         TD_download = pd.read_csv(str(a)
@@ -80,6 +81,7 @@ for a in archive_path.iterdir():
         elif 'accountactivity.csv' in str(a):
             combine_year(TD_download,'TD')
     
+    #for mastercard file
     if 'Transactions' in str(a):
         #open file
         MC_download = pd.read_csv(str(a)
