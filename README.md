@@ -14,18 +14,13 @@ pip install -r requirements.txt
 
 ## Usage
 
-```python
-import foobar
+First, I donwload the CSV files from my accounts. The scripts assume they download to the local Downloads folder for the User.
 
-# returns 'words'
-foobar.pluralize('word')
+Then, I run the `_GetDownloads.bat` to move the files to my local folder and combine them with the existing CSV files I have.
 
-# returns 'geese'
-foobar.pluralize('goose')
+The batch file will organize them all, point out any transactions without labels (which I have always manually added myself), and delete the Downloaded CSV files.
 
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
+I then use Jupyter notebooks to inspect the CSV files.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
