@@ -20,7 +20,7 @@ What is the Label?
 
 def transact_update(ListOfPaths):
     for t in ListOfPaths:
-        if datetime.now().year in str(t):
+        if str(datetime.now().year) in str(t):
             with open(str(t),'r+') as f:
                 reader = csv.reader(f)
                 for r in reader:
@@ -49,8 +49,8 @@ def transact_update(ListOfPaths):
                         ,line_terminator='\n'
                         )
 
-
 # Run the label updater
-transact_update(Path(banking_path,'data','csv','TD').iterdir())
-transact_update(Path(banking_path,'data','csv','VISA').iterdir())
-transact_update(Path(banking_path,'data','csv','MC').iterdir())
+if __name__ == "__main__":
+    transact_update(Path(banking_path,'data','csv','TD').iterdir())
+    transact_update(Path(banking_path,'data','csv','VISA').iterdir())
+    transact_update(Path(banking_path,'data','csv','MC').iterdir())

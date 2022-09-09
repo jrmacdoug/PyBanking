@@ -128,8 +128,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+
 #added by JmacDoug
 # Data folder
 data
 *.ipynb
 *.bat
+desktop.ini
