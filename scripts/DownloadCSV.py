@@ -91,6 +91,7 @@ for a in archive_path.iterdir():
         #add in missing years        
         MC_download['TransactionDate'] = pd.to_datetime(MC_download['Date'])
         MC_download['Debit?'] = np.where(MC_download['Type']=='PAYMENT',True,False)
+        MC_download['Amount'] = TD_download['Amount'].apply(lambda d: abs(d))
         MC_download['Label'] = ''
 
         #re-organize columns
